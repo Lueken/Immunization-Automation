@@ -1,0 +1,6 @@
+(.venv) PS C:\Users\31686\Desktop\GitHub\WAIIS-Immunization-Automation> python src/main.py --test-db --test-email
+2025-09-08 11:30:58,547 - waiis_automation - INFO - Starting WAIIS Immunization Automation
+2025-09-08 11:30:58,586 - waiis_automation.database - INFO - Database engine initialized successfully
+2025-09-08 11:30:58,586 - waiis_automation.main - INFO - Testing database connection...
+2025-09-08 11:30:58,909 - waiis_automation.main - INFO - Database connection test: PASSED
+2025-09-08 11:30:58,910 - waiis_automation.database - INFO - Database connections closed

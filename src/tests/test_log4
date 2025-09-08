@@ -1,0 +1,9 @@
+(.venv) PS C:\Users\31686\Desktop\GitHub\WAIIS-Immunization-Automation> python src/main.py --test-db --test-email
+2025-09-08 11:40:29,243 - waiis_automation - INFO - Starting WAIIS Immunization Automation
+2025-09-08 11:40:29,281 - waiis_automation.database - INFO - Database engine initialized successfully
+2025-09-08 11:40:29,281 - waiis_automation.main - INFO - Testing database connection...
+2025-09-08 11:40:29,593 - waiis_automation.main - INFO - Database connection test: PASSED
+2025-09-08 11:40:29,594 - waiis_automation.database - INFO - Database connections closed
+2025-09-08 11:40:29,594 - waiis_automation.main - INFO - Testing email connection...
+2025-09-08 11:40:29,626 - waiis_automation.email - ERROR - Email connection test failed: SMTP AUTH extension not supported by server.
+2025-09-08 11:40:29,626 - waiis_automation.main - ERROR - Email connection test: FAILED

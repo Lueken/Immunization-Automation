@@ -1,0 +1,63 @@
+# Credential files - CRITICAL: Keep these secure
+src/config/init.py
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environment
+.venv/
+venv/
+env/
+ENV/
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.xml
+
+# OS files
+.DS_Store
+Thumbs.db
+run_automation.bat
+
+# Log files
+logs/*.log
+*.log
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+*.temp
+
+# Excel files (reports are generated dynamically)
+*.xlsx
+*.xls
+
+# Database files (if any local copies)
+*.db
+*.sqlite
+*.sqlite3

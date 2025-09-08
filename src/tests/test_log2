@@ -1,0 +1,5 @@
+(.venv) PS C:\Users\31686\Desktop\GitHub\WAIIS-Immunization-Automation> python src/main.py --test-db --test-email
+Traceback (most recent call last):
+  File "C:\Users\31686\Desktop\GitHub\WAIIS-Immunization-Automation\src\main.py", line 26, in <module>
+    from email.sender import EmailSender
+ModuleNotFoundError: No module named 'email.sender'
