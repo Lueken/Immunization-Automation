@@ -19,7 +19,7 @@ EMAIL_CONFIG = {
 
 # Project paths
 PROJECT_ROOT = Path(__file__).parent.parent.parent
-SQL_QUERIES_PATH = PROJECT_ROOT / "waiis_query.sql"
+SQL_QUERIES_PATH = PROJECT_ROOT / "immunization_query.sql"
 LOGS_PATH = PROJECT_ROOT / "logs"
 
 # Ensure logs directory exists
@@ -27,7 +27,7 @@ LOGS_PATH.mkdir(exist_ok=True)
 
 # Logging configuration
 LOG_CONFIG = {
-    'filename': LOGS_PATH / 'waiis_automation.log',
+    'filename': LOGS_PATH / 'immunization_automation.log',
     'level': 'INFO',
     'format': '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     'max_bytes': 10 * 1024 * 1024,  # 10MB

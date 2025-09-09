@@ -10,7 +10,7 @@ from datetime import datetime
 from config.config import EMAIL_CONFIG
 from utils.school_year import get_school_year_string
 
-logger = logging.getLogger('waiis_automation.email')
+logger = logging.getLogger('immunization_automation.email')
 
 class EmailSender:
     def __init__(self):
@@ -71,13 +71,13 @@ class EmailSender:
         msg = MIMEMultipart()
         msg['From'] = self.config['from_email']
         msg['To'] = ", ".join(self.config['recipients'])
-        msg['Subject'] = f"WAIIS Immunization Report - {school_year_str}"
+        msg['Subject'] = f"Immunization Report - {school_year_str}"
 
         # Email body
         body = f"""
 Dear Staff,
 
-Please find attached the WAIIS Immunization Report for school year {school_year_str}.
+Please find attached the Immunization Report for school year {school_year_str}.
 
 Report Details:
 - Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
@@ -85,16 +85,16 @@ Report Details:
 - School Year: {school_year_str}
 - Format: CSV (Comma-Separated Values)
 
-This report contains active student roster data for WAIIS immunization tracking, excluding students without an SSID and students enrolled in program 696.
+This report contains active student roster data for immunization tracking, excluding students without an SSID and students enrolled in program 696.
 
 The CSV file can be opened in Excel, Google Sheets, or any spreadsheet application for processing.
 
-Please process this data according to our immunization compliance procedures via the WAIIS Portal.
+Please process this data according to our immunization compliance procedures via the Immunization Portal.
 
-https://redcap.doh.wa.gov/surveys/?s=R4YF4AYKNRJK4EHY
+https://your-immunization-portal.gov/surveys/
 
 Best regards,
-WAIIS Automation System
+Immunization Automation System
         """.strip()
 
         msg.attach(MIMEText(body, 'plain'))
@@ -107,7 +107,7 @@ WAIIS Automation System
                 attachment.set_payload(csv_buffer.read())
                 encoders.encode_base64(attachment)
 
-                filename = f"WAIIS_Immunization_Report_{school_year_str}_{datetime.now().strftime('%Y%m%d')}.csv"
+                filename = f"Immunization_Report_{school_year_str}_{datetime.now().strftime('%Y%m%d')}.csv"
                 attachment.add_header(
                     'Content-Disposition',
                     f'attachment; filename= {filename}'

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-WAIIS Immunization Automation Script
+Immunization Automation Script
 
 This script automates the process of:
-1. Running SQL queries against the WAIIS database
+1. Running SQL queries against the student information system's database
 2. Extracting immunization data for the current school year
 3. Emailing the results to staff members
 
@@ -27,7 +27,7 @@ from email_service.sender import EmailSender
 
 def parse_arguments():
     """Parse command line arguments."""
-    parser = argparse.ArgumentParser(description='WAIIS Immunization Automation')
+    parser = argparse.ArgumentParser(description='Immunization Automation')
     parser.add_argument(
         '--school-year', 
         type=int, 
@@ -53,7 +53,7 @@ def parse_arguments():
 
 def test_database_connection(db_manager):
     """Test database connectivity."""
-    logger = logging.getLogger('waiis_automation.main')
+    logger = logging.getLogger('immunization_automation.main')
     logger.info("Testing database connection...")
     
     if db_manager.test_connection():
@@ -65,7 +65,7 @@ def test_database_connection(db_manager):
 
 def test_email_connection(email_sender):
     """Test email connectivity."""
-    logger = logging.getLogger('waiis_automation.main')
+    logger = logging.getLogger('immunization_automation.main')
     logger.info("Testing email connection...")
     
     if email_sender.test_email_connection():
@@ -86,7 +86,7 @@ def run_immunization_report(school_year=None, dry_run=False):
     Returns:
         bool: True if successful, False otherwise
     """
-    logger = logging.getLogger('waiis_automation.main')
+    logger = logging.getLogger('immunization_automation.main')
     
     try:
         # Initialize components
@@ -114,8 +114,8 @@ def run_immunization_report(school_year=None, dry_run=False):
             return False
         
         # Load and execute query
-        logger.info("Loading and executing WAIIS query...")
-        query = query_manager.load_waiis_query(school_year)
+        logger.info("Loading and executing immunization query...")
+        query = query_manager.load_immunization_query(school_year)
         parameters = query_manager.get_query_parameters(school_year)
         
         data = db_manager.execute_query(query, parameters)
@@ -150,7 +150,7 @@ def main():
     """Main entry point."""
     # Setup logging
     logger = setup_logging()
-    logger.info("Starting WAIIS Immunization Automation")
+    logger.info("Starting Immunization Automation")
     
     try:
         # Parse arguments
@@ -185,10 +185,10 @@ def main():
         )
         
         if success:
-            logger.info("WAIIS Immunization Automation completed successfully")
+            logger.info("Immunization Automation completed successfully")
             return 0
         else:
-            logger.error("WAIIS Immunization Automation failed")
+            logger.error("Immunization Automation failed")
             return 1
             
     except KeyboardInterrupt:

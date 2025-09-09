@@ -4,7 +4,7 @@ from config.config import LOG_CONFIG
 
 def setup_logging():
     """Setup logging configuration for the application."""
-    logger = logging.getLogger('waiis_automation')
+    logger = logging.getLogger('immunization_automation')
     logger.setLevel(getattr(logging, LOG_CONFIG['level']))
     
     # Remove any existing handlers

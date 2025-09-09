@@ -3,15 +3,15 @@ from pathlib import Path
 from config.config import SQL_QUERIES_PATH
 from utils.school_year import get_current_school_year
 
-logger = logging.getLogger('waiis_automation.queries')
+logger = logging.getLogger('immunization_automation.queries')
 
 class QueryManager:
     def __init__(self):
         self.sql_file_path = SQL_QUERIES_PATH
     
-    def load_waiis_query(self, school_year=None):
+    def load_immunization_query(self, school_year=None):
         """
-        Load and parameterize the WAIIS query from the SQL file.
+        Load and parameterize the immunization query from the SQL file.
         
         Args:
             school_year (int, optional): School year to use. If None, uses current school year.
@@ -22,14 +22,14 @@ class QueryManager:
         if school_year is None:
             school_year = get_current_school_year()
         
-        logger.info(f"Loading WAIIS query for school year {school_year}")
+        logger.info(f"Loading immunization query for school year {school_year}")
         
         try:
             with open(self.sql_file_path, 'r', encoding='utf-8') as file:
                 query_template = file.read()
             
             # SQL file already contains :school_year parameter
-            logger.info("WAIIS query loaded successfully")
+            logger.info("Immunization query loaded successfully")
             return query_template
             
         except FileNotFoundError:
@@ -41,7 +41,7 @@ class QueryManager:
     
     def get_query_parameters(self, school_year=None):
         """
-        Get the parameters dictionary for the WAIIS query.
+        Get the parameters dictionary for the immunization query.
         
         Args:
             school_year (int, optional): School year to use. If None, uses current school year.

@@ -1,11 +1,14 @@
-# WAIIS Immunization Automation
+# [STATE] Immunization Automation
 
-An automated Python script that streamlines the process of extracting student immunization data from the WAIIS (Wisconsin Immunization Registry) database and distributing it to staff members via email.
-
+An automated Python script that:
+1. Extracts active student roster data from the school district's database
+2. Formats it according to state immunization registry requirements
+3. Emails the data to DOH staff who upload it to the state immunization tracking system
+4. Enables the DOH to match student records with their immunization histories for compliance monitoring
 ## 🎯 Purpose
 
 This application automates the tedious manual process of:
-1. **Querying the WAIIS database** for active student roster data
+1. **Querying the database** for active student roster data
 2. **Generating Excel reports** with immunization compliance information  
 3. **Emailing reports** to designated staff members for processing
 4. **Automatically handling school year transitions** every September 1st
@@ -37,7 +40,7 @@ September 1, 2026  → School Year 2026 (2026-2027 academic year)
 - **Excel attachments** generated automatically from query results
 - **Multiple recipients** supported via configuration
 - **Professional email templates** with report details and instructions
-- **WAIIS Portal links** included for easy data processing
+- **Portal links** included for easy data processing
 
 ### 🔄 Robust Error Handling
 - **Database retry logic** for connection failures
@@ -49,7 +52,7 @@ September 1, 2026  → School Year 2026 (2026-2027 academic year)
 
 ### Prerequisites
 - Python 3.13+
-- Access to WAIIS database
+- Access to database
 - Internal SMTP server access
 
 ### Installation
@@ -57,7 +60,7 @@ September 1, 2026  → School Year 2026 (2026-2027 academic year)
 1. **Clone and setup environment:**
 ```bash
 git clone <repository-url>
-cd WAIIS-Immunization-Automation
+cd Immunization-Automation
 python -m venv .venv
 .venv\Scripts\activate  # Windows
 pip install -r requirements.txt
@@ -88,8 +91,8 @@ python src/main.py
 For automated execution, use the included batch file:
 
 1. **Configure Task Scheduler:**
-   - Program/script: `C:\path\to\WAIIS-Immunization-Automation\run_automation.bat`
-   - Start in: `C:\path\to\WAIIS-Immunization-Automation`
+   - Program/script: `C:\path\to\Immunization-Automation\run_automation.bat`
+   - Start in: `C:\path\to\Immunization-Automation`
    - Run with highest privileges: Yes
 
 2. **Schedule frequency:** Set based on your immunization reporting needs
@@ -139,7 +142,7 @@ def get_current_school_year():
 ```
 ├── run_automation.bat       # Windows Task Scheduler execution file
 ├── requirements.txt         # Python dependencies
-├── waiis_query.sql         # SQL query template (auto-parameterized)
+├── immunization_query.sql         # SQL query template (auto-parameterized)
 ├── src/
 │   ├── main.py             # Main automation script
 │   ├── config/
@@ -190,7 +193,7 @@ python src/main.py
 ### For School Administrative Staff  
 - **Timely reports** - Automated delivery ensures no missed deadlines
 - **Consistent format** - Standardized Excel reports every time
-- **Direct WAIIS links** - Email includes portal links for easy data processing
+- **Direct links** - Email includes portal links for easy data processing
 - **Multiple recipients** - Reports automatically distributed to all relevant staff
 
 ### For Compliance

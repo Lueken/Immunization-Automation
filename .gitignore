@@ -1,5 +1,30 @@
-# Credential files - CRITICAL: Keep these secure
+# CRITICAL - Credential files (NEVER commit these)
 src/config/init.py
+config/init.py
+init.py
+*.local.*
+config.local.py
+
+# CRITICAL - SQL queries and database files
+immunization_query.sql
+waiis_query.sql
+*.sql
+*.db
+*.sqlite
+*.sqlite3
+
+# Data files (may contain sensitive information)
+*.csv
+*.xlsx
+*.xls
+test_data/
+sample_data/
+data/
+
+# Environment variables
+.env
+.env.local
+*.env
 
 # Python
 __pycache__/
@@ -23,12 +48,16 @@ wheels/
 .installed.cfg
 *.egg
 MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
 
-# Virtual environment
+# Virtual environments
 .venv/
 venv/
 env/
 ENV/
+env.bak/
+venv.bak/
 
 # IDE files
 .idea/
@@ -36,28 +65,73 @@ ENV/
 *.swp
 *.swo
 *~
-.xml
+*.iml
+*.ipr
+*.iws
+.project
+.pydevproject
+.settings/
+
+# Claude/AI configuration
+.claude/
+settings.local.json
 
 # OS files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+desktop.ini
+
+# Windows batch files (if they contain actual paths)
 run_automation.bat
+# Keep the example: run_automation_example.bat
 
 # Log files
-logs/*.log
+logs/
 *.log
+*.log.*
 
 # Temporary files
 temp/
 tmp/
 *.tmp
 *.temp
+*.bak
+*.backup
+*.orig
+*~
 
-# Excel files (reports are generated dynamically)
-*.xlsx
-*.xls
+# Documentation build files
+docs/_build/
+site/
 
-# Database files (if any local copies)
-*.db
-*.sqlite
-*.sqlite3
+# Jupyter Notebooks (if used for testing)
+.ipynb_checkpoints
+*.ipynb
+
+# Package files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/

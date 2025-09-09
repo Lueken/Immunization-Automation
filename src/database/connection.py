@@ -4,7 +4,7 @@ from sqlalchemy.exc import SQLAlchemyError
 from config.config import DATABASE_URL
 import time
 
-logger = logging.getLogger('waiis_automation.database')
+logger = logging.getLogger('immunization_automation.database')
 
 class DatabaseManager:
     def __init__(self, max_retries=3, retry_delay=5):

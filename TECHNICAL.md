@@ -1,11 +1,9 @@
-# CLAUDE.md
-
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+# TECHNICAL.md
 
 ## Project Overview
 
-WAIIS Immunization Automation - A Python script that automates the process of:
-1. Running SQL queries against the WAIIS (Wisconsin Immunization Registry) database
+Immunization Automation - A Python script that automates the process of:
+1. Running SQL queries against the Student Information System database
 2. Extracting immunization data for the current school year
 3. Emailing the results to staff members who handle immunization uploads
 
@@ -20,7 +18,7 @@ WAIIS Immunization Automation - A Python script that automates the process of:
 The automation system should include these key components:
 
 ### Core Modules
-- **Database Connection**: SQLAlchemy with SQL Server connectivity to WAIIS
+- **Database Connection**: SQLAlchemy with SQL Server connectivity
 - **Query Execution**: SQL query runner with parameterized school year
 - **Email Service**: SMTP email sender with attachment support
 - **Configuration Management**: init.py file feeding config.py for secure credential handling
@@ -72,7 +70,7 @@ The project includes a `run_automation.bat` file for Windows Task Scheduler exec
 
 ```batch
 @echo off
-cd /d "C:\Users\31686\Desktop\GitHub\WAIIS-Immunization-Automation"
+cd /d "C:\path\to\Immunization-Automation"
 call .venv\Scripts\activate
 python src\main.py
 pause
@@ -98,7 +96,7 @@ config/
 ```python
 # Database credentials
 DB_SERVER = "your-server.domain.com"
-DB_DATABASE = "WAIIS_DB"
+DB_DATABASE = "IMMUNIZATION_DB"
 DB_USERNAME = "your_username"
 DB_PASSWORD = "your_password"
 
